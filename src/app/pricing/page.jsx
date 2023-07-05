@@ -1,7 +1,6 @@
 'use client'
 
 import axios from "axios";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import React, { useState } from "react";
 import { Suspense } from 'react'
 import MovieCard from "../components/moviecard";
