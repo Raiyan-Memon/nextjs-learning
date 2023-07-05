@@ -5,10 +5,6 @@ import { Metadata } from 'next';
 import React from 'react';
 import axios from 'axios';
 
-export const metadata: Metadata = {
-    title: 'Raiyan Project - SignUp',
-}
-
 export default function signup() {
     function signUP(): void {
         console.log(user);
