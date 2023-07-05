@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Login() {
 
-    const [user, setUser] = React.useState({
+    const [user, setUser] = useState({
         username: "",
         password: "",
     });
