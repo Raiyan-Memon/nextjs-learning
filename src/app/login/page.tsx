@@ -9,7 +9,7 @@ export default function Login() {
         password: "",
     });
 
-    function logIn() {
+    function LogIn() {
         console.log(user);
     }
 
@@ -21,7 +21,7 @@ export default function Login() {
                 <input onChange={(e) => setUser({ ...user, username: e.target.value })} type="text" className='form-control' value={user.username} />
                 <label htmlFor="">Password</label>
                 <input onChange={(e) => setUser({ ...user, password: e.target.value })} type="password" className='form-control' value={user.password} />
-                <button className='btn btn-primary mt-1' onClick={logIn}>Submit</button>
+                <button className='btn btn-primary mt-1' onClick={LogIn}>Submit</button>
 
                 <div className="row text-center">
                     <p>forget password ? <Link className='' href="/signup">SignUP</Link></p>
