@@ -4,11 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Link from 'next/link';
-import Button from './components/button';
 import Navbar from './components/navbar';
-import Loading from './home/loading';
-import { Suspense } from 'react';
 
 
 const inter = Inter({ subsets: ['latin'] })
