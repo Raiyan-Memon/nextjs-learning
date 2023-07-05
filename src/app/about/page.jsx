@@ -1,9 +1,34 @@
 'use client'
 
 import axios from "axios"
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import toastr from "toastr";
+import 'toastr/build/toastr.css';
 
 export default function Page() {
+
+    useEffect(() => {
+        require("toastr/build/toastr.min.js");
+      }, []);
+
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+
 
     var res = '';
 
@@ -24,9 +49,12 @@ export default function Page() {
             .then((res) => {
                 console.log(res.data.main.temp)
                 updateData({ ...data, temp: res.data.main.temp })
+                toastr.success('Success', "Temperature Found");
             })
             .catch((err) => {
                 console.log(err)
+                toastr.options.progressBar = true;
+                toastr.error('Error', "No City Found");
             });
     }
 
