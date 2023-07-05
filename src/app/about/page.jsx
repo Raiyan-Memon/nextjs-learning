@@ -1,14 +1,14 @@
 'use client'
 
 import axios from "axios"
-import React from "react";
+import React, {useState} from "react";
 
 export default function page() {
 
     var res = '';
 
 
-    const [data, updateData] = React.useState({
+    const [data, updateData] = useState({
         temp: "",
         name: "",
         temp_min: '',
