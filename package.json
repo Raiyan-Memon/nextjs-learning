@@ -18,6 +18,7 @@
     "bootstrap": "^5.3.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
+    "jquery": "^3.7.0",
     "mongoose": "^7.3.1",
     "next": "13.4.7",
     "postcss": "8.4.24",
