@@ -49,7 +49,7 @@ export default function Page() {
             .then((res) => {
                 console.log(res.data.main.temp)
                 updateData({ ...data, temp: res.data.main.temp })
-                toastr.success('Success', "Temperature Found");
+                toastr.success('Success', "Temperature Updated");
             })
             .catch((err) => {
                 console.log(err)
