@@ -16,7 +16,7 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/home" ? ' text-black' : '')} aria-current="page" href="/home">Home</Link>
+                            <Link className={'nav-link' + (pathname == "/" ? ' text-black' : '')} aria-current="page" href="/">Home</Link>
                         </li>
                         <li className="nav-item">
                             <Link className={'nav-link' + (pathname == "/about" ? ' text-black' : '')} href="/about">About</Link>
