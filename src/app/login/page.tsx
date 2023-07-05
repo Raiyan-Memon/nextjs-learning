@@ -4,10 +4,6 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import React from 'react';
 
-export const metadata: Metadata = {
-    title: 'Raiyan Project - LogIn',
-}
-
 export default function login() {
 
     const [user, setUser] = React.useState({
