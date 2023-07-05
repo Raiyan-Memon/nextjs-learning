@@ -1,7 +1,6 @@
 'use client';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from './components/navbar';
