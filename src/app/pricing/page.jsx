@@ -6,13 +6,13 @@ import { Suspense } from 'react'
 import MovieCard from "../components/moviecard";
 
 
-export default function page() {
+export default function Page() {
 
     const IMGPATH = "https://image.tmdb.org/t/p/w1280";
     const [movieArray, movieUpdate] = useState([]);
     const [page, updatePage] = useState(1);
 
-    function getData(count) {
+    function GetData(count) {
         axios({
             url: `https://api.themoviedb.org/3/movie/popular?api_key=6d02a218c581074ce22ac8d31f03aaf7&page=${count}`,
             method: "GET"
@@ -27,19 +27,19 @@ export default function page() {
     }
 
     React.useEffect(() => {
-        getData(1);
+        GetData(1);
     }, []);
 
-    function pageIncrement() {
+    function PageIncrement() {
         let count = page + 1;
         updatePage(count)
-        getData(count)
+        GetData(count)
     }
-    function pageDecrement() {
+    function PageDecrement() {
         if (page > 1) {
             let count = page - 1;
             updatePage(count)
-            getData(count)
+            GetData(count)
         }
     }
 
@@ -56,13 +56,13 @@ export default function page() {
             </div>
             <div className="row justify-content-center">
                 <div className="col-md-1 col-2 text-end">
-                    <button onClick={pageDecrement} className="btn btn-outline-danger">-</button>
+                    <button onClick={PageDecrement} className="btn btn-outline-danger">-</button>
                 </div>
                 <div className="col-md-1 col-2 text-center">
                     <p>{page}</p>
                 </div>
                 <div className="col-md-1 col-2 text-left">
-                    <button onClick={pageIncrement} className="btn btn-outline-success">+</button>
+                    <button onClick={PageIncrement} className="btn btn-outline-success">+</button>
                 </div>
             </div>
         </div >
