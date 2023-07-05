@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import React from 'react';
 import axios from 'axios';
 
-export default function signup() {
+export default function Signup() {
     function signUP(): void {
         console.log(user);
     }

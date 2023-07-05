@@ -3,7 +3,7 @@
 import axios from "axios"
 import React, {useState} from "react";
 
-export default function page() {
+export default function Page() {
 
     var res = '';
 

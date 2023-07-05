@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import React from 'react';
 
-export default function login() {
+export default function Login() {
 
     const [user, setUser] = React.useState({
         username: "",

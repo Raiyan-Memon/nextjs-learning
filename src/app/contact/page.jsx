@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 
-export default function page() {
+export default function Page() {
 
     const [myInput, updateName] = useState('')
     const [todos, updateTodo] = useState([]);
