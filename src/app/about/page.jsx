@@ -1,7 +1,7 @@
 'use client'
 
 import axios from "axios"
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import toastr from "toastr";
 import 'toastr/build/toastr.css';
 
@@ -9,7 +9,7 @@ export default function Page() {
 
     useEffect(() => {
         require("toastr/build/toastr.min.js");
-      }, []);
+    }, []);
 
     toastr.options = {
         "closeButton": false,
@@ -26,20 +26,17 @@ export default function Page() {
         "showEasing": "swing",
         "hideEasing": "linear",
         "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-      }
-
-
-    var res = '';
-
+        "hideMethod": "fadeOut",
+        'progressBar': true
+    }
 
     const [data, updateData] = useState({
         temp: "",
         name: "",
         temp_min: '',
-        search : '',
+        search: '',
     })
-
+    const [name, setName] = useState('');
 
     function getData() {
         axios({
@@ -47,24 +44,25 @@ export default function Page() {
             method: "GET"
         })
             .then((res) => {
-                console.log(res.data.main.temp)
+                console.log(res.data.name)
                 updateData({ ...data, temp: res.data.main.temp })
+                setName(res.data.name)
                 toastr.success('Success', "Temperature Updated");
             })
             .catch((err) => {
                 console.log(err)
-                toastr.options.progressBar = true;
+                setName('')
+                updateData({ ...data, temp: '' })
                 toastr.error('Error', "No City Found");
             });
     }
 
-
-
     return (
         <div><p>Weather</p>
             <div className="container">
-                <input type="type" onChange={(e) => updateData({...data, search : e.target.value})} className="form-control" name="" id="" /><button onClick={getData} className="btn btn-primary">Click</button>
+                <input type="type" onChange={(e) => updateData({ ...data, search: e.target.value })} className="form-control" name="" id="" /><button onClick={getData} className="btn btn-primary">Click</button>
                 <p>Temperature : {data.temp}</p>
+                <p>Name : {name}</p>
             </div>
 
         </div>
