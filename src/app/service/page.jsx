@@ -14,7 +14,7 @@ export default function Page(){
         <div>Service Page
 
         {array.map((value) => (
-            <li>{value}</li>
+            <li key={value}>{value}</li>
         ))}
 
         <li>{arr.name}</li>
