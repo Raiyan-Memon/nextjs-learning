@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react";
 import toastr from "toastr";
 import 'toastr/build/toastr.css';
-
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
 export default function Page() {
+
 
     toastr.options = {
         "closeButton": false,
@@ -71,7 +72,8 @@ export default function Page() {
     }, [todos]);
 
     return (
-        <div className="container"><h1 className="text-center">Todo's App</h1>
+        <div className="container">
+            <h1 className="text-center">Todo's App</h1>
             <form className="" onSubmit={(e) => e.preventDefault()} action="">
                 <div className="row ">
                     <label htmlFor="">Your Todo</label>
@@ -85,20 +87,27 @@ export default function Page() {
             </form>
             {/* <p>Value : {myInput}</p> */}
             <h2 className="mt-5 text-center">Todo List</h2>
+
             <div className="row justify-content-center">
-                {todos.map((value, key1) => (
-                    <div key={key1} className="col-md-2 col-4 m-2 bg-light text-dark rounded border text-center align-items-center">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <p className="pt-1">{value}</p>
+
+                <ResponsiveMasonry
+                    columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 4 }}
+                >
+                    <Masonry gutter="10px" columnsCount={5}>
+                        {todos.map((value, key1) => (
+                            <div key={key1} className="col-md-2 w-100 col-4 m-2 bg-light text-dark rounded border text-center align-items-center">
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <p className="pt-1">{value}</p>
+                                    </div>
+                                    <div className="col-md-12 text-end" onClick={() => DeleteTodo(key1)}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" cursor={'pointer'} fill="red" height="24" viewBox="0 -960 960 960" width="48"><path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z" /></svg>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="col-md-12 text-end" onClick={() => DeleteTodo(key1)}>
-                                <svg xmlns="http://www.w3.org/2000/svg" cursor={'pointer'} fill="red" height="24" viewBox="0 -960 960 960" width="48"><path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z" /></svg>
-                            </div>
-                        </div>
-                    </div>
-                    // <p key={key1}>{value}<span className={key1}  ><svg xmlns="http://www.w3.org/2000/svg" cursor={'pointer'} fill="red" height="24" viewBox="0 -960 960 960" width="48"><path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z" /></svg></span></p>
-                ))}
+                        ))}
+                    </Masonry>
+                </ResponsiveMasonry>
             </div>
         </div>
 

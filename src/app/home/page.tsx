@@ -13,11 +13,23 @@ export default function page() {
 
         <div>
             home page
-            <ul>{users.map((user) =>(
+            <ul>{users.map((user) => (
                 <p key={user.name}>{user.name} {user.age}</p>
 
             )
             )}</ul>
+
+
+            <div className="container">
+
+                <div className="row">
+                    
+                </div>
+
+            </div>
+
+
+
         </div>
 
 
