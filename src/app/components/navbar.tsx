@@ -19,13 +19,13 @@ export default function Navbar() {
                             <Link className={'nav-link' + (pathname == "/" ? ' text-black' : '')} aria-current="page" href="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/about" ? ' text-black' : '')} href="/about">About</Link>
+                            <Link className={'nav-link' + (pathname == "/about" ? ' text-black' : '')} href="/about">Weather</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/contact" ? ' text-black' : '')} href="/contact">Contact</Link>
+                            <Link className={'nav-link' + (pathname == "/contact" ? ' text-black' : '')} href="/contact">Todo's App</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/pricing" ? ' text-black' : '')} href="/pricing">Pricing</Link>
+                            <Link className={'nav-link' + (pathname == "/pricing" ? ' text-black' : '')} href="/pricing">Movie</Link>
                         </li>
                         <li className="nav-item">
                             <Link className={'nav-link' + (pathname == "/service" ? ' text-black' : '')} href="/service">Service</Link>
