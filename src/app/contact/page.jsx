@@ -26,13 +26,13 @@ export default function Page() {
         'progressBar': true
     }
 
-
     const [myInput, updateName] = useState('')
     const [todos, updateTodo] = useState([]);
     const [update, setUpdate] = useState(false);
 
     useEffect(() => {
-        let arrayTodo = localStorage.getItem("todos")
+        var arrayTodo = localStorage.getItem("todos");
+        // console.log(arrayTodo == '');
         if (arrayTodo != '') {
             arrayTodo = arrayTodo.split(",");
             toastr.warning('All Your Previous Notes has been imported', 'Pevious Notes');
@@ -44,7 +44,6 @@ export default function Page() {
         if (myInput != '') {
             updateTodo(todos.concat(myInput));
             toastr.success('Added', "New Note Added");
-
         }
         updateName('');
     }
