@@ -81,7 +81,6 @@ export default function Page() {
                 </div>
             </form>
             {/* <p>Value : {myInput}</p> */}
-
             <h2 className="mt-5 text-center">Todo List</h2>
             <div className="row justify-content-center">
                 {todos.map((value, key1) => (
