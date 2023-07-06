@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import Navbar from './components/navbar';
 import { useEffect } from "react";
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 const metadata = {
