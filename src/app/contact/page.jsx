@@ -14,7 +14,7 @@ export default function Page() {
         "newestOnTop": false,
         "progressBar": false,
         "positionClass": "toast-top-right",
-        "preventDuplicates": false,
+    "preventDuplicates": false,
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",

@@ -3,18 +3,22 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Suspense } from 'react'
-import MovieCard from "../components/moviecard";
-
+import MovieCard from "../../components/moviecard";
+import Link from "next/link";
+import { useParams } from 'next/navigation'
 
 export default function Page() {
 
+    const params = useParams()
+    console.log(params.id);
+
     const IMGPATH = "https://image.tmdb.org/t/p/w1280";
     const [movieArray, movieUpdate] = useState([]);
-    const [page, updatePage] = useState(1);
+    const [page, updatePage] = useState(parseInt(params.id));
 
     function GetData(count) {
         axios({
-            url: `https://api.themoviedb.org/3/movie/popular?api_key=6d02a218c581074ce22ac8d31f03aaf7&page=${count}`,
+            url: `https://api.themoviedb.org/3/movie/popular?api_key=6d02a218c581074ce22ac8d31f03aaf7&page=${params.id}`,
             method: "GET"
         })
             .then((res) => {
@@ -62,7 +66,9 @@ export default function Page() {
                     <p>{page}</p>
                 </div>
                 <div className="col-md-1 col-2 text-left">
-                    <button onClick={PageIncrement} className="btn btn-outline-success">+</button>
+                    <Link href={'/pricing/' + (page + 1)}>
+                        <button onClick={PageIncrement} className="btn btn-outline-success">+</button>
+                    </Link>
                 </div>
             </div>
         </div >

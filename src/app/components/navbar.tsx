@@ -25,7 +25,7 @@ export default function Navbar() {
                             <Link className={'nav-link' + (pathname == "/contact" ? ' text-black' : '')} href="/contact">Todo's App</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/pricing" ? ' text-black' : '')} href="/pricing">Movie</Link>
+                            <Link className={'nav-link' + (pathname == "/pricing" ? ' text-black' : '')} href="/pricing/1">Movie</Link>
                         </li>
                         <li className="nav-item">
                             <Link className={'nav-link' + (pathname == "/service" ? ' text-black' : '')} href="/service">Service</Link>
