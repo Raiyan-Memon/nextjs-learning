@@ -32,9 +32,12 @@ export default function Page() {
 
     useEffect(() => {
         var arrayTodo = localStorage.getItem("todos");
-        // console.log(arrayTodo == '');
         if (arrayTodo != '') {
-            arrayTodo = arrayTodo.split(",");
+            try {
+                arrayTodo = arrayTodo.split(",");
+            } catch (error) {
+                console.log(error);
+            }
             toastr.warning('All Your Previous Notes has been imported', 'Pevious Notes');
             updateTodo(arrayTodo);
         }
