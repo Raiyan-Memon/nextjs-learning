@@ -28,7 +28,7 @@ export default function Page() {
 
 
     const [myInput, updateName] = useState('')
-    const [todos, updateTodo] = useState([]);
+    const [todos, updateTodo] = useState(['']);
     const [update, setUpdate] = useState(false);
 
     useEffect(() => {
