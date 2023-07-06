@@ -28,12 +28,13 @@ export default function Page() {
 
 
     const [myInput, updateName] = useState('')
-    const [todos, updateTodo] = useState(['']);
+    const [todos, updateTodo] = useState([]);
     const [update, setUpdate] = useState(false);
 
     useEffect(() => {
-        let arrayTodo = localStorage.getItem("todos").split(",");
+        let arrayTodo = localStorage.getItem("todos")
         if (arrayTodo != '') {
+            arrayTodo = arrayTodo.split(",");
             toastr.warning('All Your Previous Notes has been imported', 'Pevious Notes');
             updateTodo(arrayTodo);
         }
