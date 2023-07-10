@@ -1,5 +1,7 @@
 'use client'
 
+import Image from "next/image";
+
 export default function page() {
 
 
@@ -12,6 +14,12 @@ export default function page() {
     return (
 
         <div>
+
+            {/* <Image
+                src="https://image.tmdb.org/t/p/w1280/3IhGkkalwXguTlceGSl8XUJZOVI.jpg"
+                alt="Picture of the author"
+            /> */}
+
             home page
             <ul>{users.map((user) => (
                 <p key={user.name}>{user.name} {user.age}</p>
@@ -23,7 +31,7 @@ export default function page() {
             <div className="container">
 
                 <div className="row">
-                    
+
                 </div>
 
             </div>

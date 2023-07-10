@@ -1,5 +1,5 @@
 'use client';
 
-export default function loadingPage(){
+export default function loadingPage() {
     return "loading....";
 }

@@ -24,3 +24,7 @@ body {
 
     background-color: black;
 }
+
+#nprogress .bar {
+  background: #FFBB00 !important;
+}
