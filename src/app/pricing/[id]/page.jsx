@@ -89,8 +89,8 @@ export default function Page() {
                         </Link>
                     </li>
                     <li hidden={page != 1 ? false : true} class="page-item"><Link class="page-link" href={'/pricing/' + (page - 1)}>{page - 1}</Link></li>
-                    <li class="page-item"><a class="page-link" href={'/pricing/' + (page)}>{page}</a></li>
-                    <li class="page-item"><a class="page-link" href={'/pricing/' + (page + 1)}>{page + 1}</a></li>
+                    <li class="page-item"><Link class="page-link bg-dark" href={'/pricing/' + (page)}>{page}</Link></li>
+                    <li class="page-item"><Link class="page-link" href={'/pricing/' + (page + 1)}>{page + 1}</Link></li>
                     <li class="page-item">
                         <Link className="underline-remove" href={'/pricing/' + (page + 1)}>
                             <button onClick={PageIncrement} className="page-link">Next</button>
