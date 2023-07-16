@@ -2,7 +2,16 @@
 
 import Image from "next/image";
 
-export default function page() {
+export default async function page() {
+
+
+    const data = await fetch("https://64b3f40b0efb99d862689318.mockapi.io/students", {
+        method: "GET",
+    });
+    // const response  = await data;
+    console.log(data    );
+    
+
 
 
     const users = [
