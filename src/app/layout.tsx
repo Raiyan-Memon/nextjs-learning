@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from './components/navbar';
-import { useEffect } from "react";
-
+import Router from 'next/router'
+import { useState, useEffect } from 'react';
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +27,20 @@ export default function RootLayout({
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
+
+  useEffect(() => {
+    Router.events.on("routeChangeStart", (url)=>{
+      NProgress.start();
+    });
+
+    Router.events.on("routeChangeComplete", (url)=>{
+      NProgress.done();
+    });
+
+    Router.events.on("routeChangeError", (url) =>{
+      NProgress.done();
+    });
+  }, [Router])
 
   return (
     <html lang="en">

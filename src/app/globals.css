@@ -25,6 +25,10 @@ body {
     background-color: black;
 }
 
+.underline-remove{
+  text-decoration: none;
+}
+
 #nprogress .bar {
-  background: #FFBB00 !important;
+  background: #FFBB00 !important; 
 }

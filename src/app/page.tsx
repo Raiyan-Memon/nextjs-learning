@@ -19,7 +19,12 @@ export default function page() {
                 alt="Picture of the author"
                 width={500}
                 height={500}/> */}
-
+            <Image
+                src="https://s3.amazonaws.com/my-bucket/profile.png"
+                alt="Picture of the author"
+                width={500}
+                height={500}
+            />
             home page
             <ul>{users.map((user) => (
                 <p key={user.name}>{user.name} {user.age}</p>

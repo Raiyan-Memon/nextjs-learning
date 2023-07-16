@@ -35,6 +35,7 @@ export default function Page() {
             });
     }
 
+
     React.useEffect(() => {
         GetData(1);
     }, []);
@@ -63,9 +64,11 @@ export default function Page() {
                     // </Suspense>
                 ))}
             </div>
-            <div className="row justify-content-center">
+            {/* <div className="row justify-content-center">
                 <div className="col-md-1 col-2 text-end">
-                    <button onClick={PageDecrement} className="btn btn-outline-danger">-</button>
+                    <Link href={'/pricing/' + (page - 1)}>
+                        <button onClick={PageDecrement} className="btn btn-outline-danger">-</button>
+                    </Link>
                 </div>
                 <div className="col-md-1 col-2 text-center">
                     <p>{page}</p>
@@ -75,7 +78,27 @@ export default function Page() {
                         <button onClick={PageIncrement} className="btn btn-outline-success">+</button>
                     </Link>
                 </div>
-            </div>
+            </div> */}
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <Link className="underline-remove" href={'/pricing/' + (page - 1)}>
+                            <button disabled={page != 1 ? false : true} onClick={page != '1' ? PageDecrement : ''} className="page-link">Previous</button>
+                        </Link>
+                    </li>
+                    <li hidden={page != 1 ? false : true} class="page-item"><Link class="page-link" href={'/pricing/' + (page - 1)}>{page - 1}</Link></li>
+                    <li class="page-item"><a class="page-link" href={'/pricing/' + (page)}>{page}</a></li>
+                    <li class="page-item"><a class="page-link" href={'/pricing/' + (page + 1)}>{page + 1}</a></li>
+                    <li class="page-item">
+                        <Link className="underline-remove" href={'/pricing/' + (page + 1)}>
+                            <button onClick={PageIncrement} className="page-link">Next</button>
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+
         </div >
     )
 }
