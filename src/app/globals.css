@@ -54,6 +54,17 @@ body {
 
 .swiper-slide img {
   /* display: block; */
-  width: 100%;
+  /* width: 100%; */
 }
 
+@media screen and (max-width: 480px) {
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50% !important;
+    /* height: 200px !important; */
+  }
+  .swiper {
+    width: 100% !important;
+  }
+}
