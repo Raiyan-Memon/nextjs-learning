@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import toastr from "toastr";
 import 'toastr/build/toastr.css';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import toast, { Toaster } from 'react-hot-toast';
+// import toast, { Toaster } from 'react-hot-toast';
 
 export default function Page() {
 
@@ -40,7 +40,7 @@ export default function Page() {
             } catch (error) {
                 console.log(error);
             }
-            toast('Here is your toast.');
+            // toast('Here is your toast.');
 
             toastr.warning('All Your Previous Notes has been imported', 'Pevious Notes');
             updateTodo(arrayTodo);
