@@ -119,10 +119,8 @@ export default function Page() {
                     //     <MovieCard title={value.title} imagepath={IMGPATH + value.poster_path} />
                     // </div>
 
-                    <SwiperSlide>
-                        <div key={value.id}>
-                            <img src={IMGPATH + value.poster_path} width="100%" height="100%" alt="Picture of the author" />
-                        </div>
+                    <SwiperSlide key={value.id}>
+                        <img src={IMGPATH + value.poster_path} width="100%" height="100%" alt="Picture of the author" />
                     </SwiperSlide>
                     // </Suspense>
                 ))}
