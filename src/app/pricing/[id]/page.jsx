@@ -8,6 +8,17 @@ import Link from "next/link";
 import { useParams } from 'next/navigation'
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
+// import './styles.css';
+
+// import required modules
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 
 export default function Page() {
@@ -53,9 +64,71 @@ export default function Page() {
         }
     }
 
+
     return (
         <div className="container-fluid">
-            <div className="row text-center">
+
+            <Swiper
+                loop={true}
+                effect={'coverflow'}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={'auto'}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                }}
+                pagination={true}
+                modules={[EffectCoverflow, Pagination]}
+                className="mySwiper">
+                {/* <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                </SwiperSlide> */}
+
+                {movieArray.map(value => (
+                    // <Suspense fallback={<p>Loading feed...</p>}>
+                    // <div key={value.id} className="col-md-2 col-6">
+                    //     <MovieCard title={value.title} imagepath={IMGPATH + value.poster_path} />
+                    // </div>
+
+                    <SwiperSlide>
+                        <img key={value.id} src={IMGPATH + value.poster_path} />
+                    </SwiperSlide>
+                    // </Suspense>
+                ))}
+
+
+
+            </Swiper>
+
+            <div className="row text-center mt-3">
                 {movieArray.map(value => (
                     // <Suspense fallback={<p>Loading feed...</p>}>
                     <div key={value.id} className="col-md-2 col-6">

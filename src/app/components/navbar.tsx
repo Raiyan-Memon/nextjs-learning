@@ -25,7 +25,7 @@ export default function Navbar() {
                             <Link className={'nav-link' + (pathname == "/contact" ? ' text-black' : '')} href="/contact">Todo's App</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/pricing" ? ' text-black' : '')} href="/pricing/1">Movie</Link>
+                            <Link className={'nav-link' + (pathname.indexOf('pricing') >= 0 ? ' text-black' : '')} href="/pricing/1">Movie</Link>
                         </li>
                         <li className="nav-item">
                             <Link className={'nav-link' + (pathname == "/service" ? ' text-black' : '')} href="/service">Service</Link>
@@ -36,9 +36,9 @@ export default function Navbar() {
                         <li className="nav-item">
                             <Link className={'nav-link' + (pathname == "/signup" ? ' text-black' : '')} href="/signup">SignUp</Link>
                         </li>
-                    
+
                     </ul>
-                    {/* <form className="d-flex">
+                    {/* <form className="d-flex"{id}
                         <input className="form-control me-2" id="" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Search</button>
                     </form> */}

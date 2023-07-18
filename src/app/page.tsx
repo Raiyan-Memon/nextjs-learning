@@ -1,17 +1,23 @@
-'use client'
+
 
 import Image from "next/image";
+import { Metadata } from 'next'
 import { useEffect } from 'react';
+
+export const metadata: Metadata = {
+    title: 'Home - Page',
+}
+
 
 export default async function page() {
 
 
-    async function GetData() {
-        const data = await fetch("https://64b3f40b0efb99d862689318.mockapi.io/students");
-        return data.json();
-    }
+    // async function GetData() {
+    //     const data = await fetch("https://64b3f40b0efb99d862689318.mockapi.io/students");
+    //     return data.json();
+    // }
 
-    const newData = await GetData();
+    // const newData = await GetData();
     // console.log(newData);
 
     const users = [
@@ -24,11 +30,11 @@ export default async function page() {
 
         <div>
 
-            {newData.map((user: any) => (
+            {/* {newData.map((user: any) => (
                 <p key={user.id}>{user.id} {user.name}</p>
 
             )
-            )}
+            )} */}
 
             {/* <Image
                 src="https://image.tmdb.org/t/p/w1280/3IhGkkalwXguTlceGSl8XUJZOVI.jpg"
