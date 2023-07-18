@@ -31,7 +31,7 @@ export default function Page() {
     const [movieArray, movieUpdate] = useState([]);
     const [page, updatePage] = useState(parseInt(params.id));
 
-    function GetData(count) {
+    function GetData() {
         NProgress.start();
         axios({
             url: `https://api.themoviedb.org/3/movie/popular?api_key=6d02a218c581074ce22ac8d31f03aaf7&page=${params.id}`,
@@ -49,19 +49,19 @@ export default function Page() {
 
 
     React.useEffect(() => {
-        GetData(1);
+        GetData();
     }, []);
 
     function PageIncrement() {
         let count = page + 1;
         updatePage(count)
-        GetData(count)
+        GetData()
     }
     function PageDecrement() {
         if (page > 1) {
             let count = page - 1;
             updatePage(count)
-            GetData(count)
+            GetData()
         }
     }
 
@@ -121,7 +121,7 @@ export default function Page() {
 
                     <SwiperSlide>
                         <div key={value.id}>
-                            <img key={value.id} src={IMGPATH + value.poster_path} width="100%" height="100%" />
+                            <img src={IMGPATH + value.poster_path} width="100%" height="100%" alt="Picture of the author" />
                         </div>
                     </SwiperSlide>
                     // </Suspense>
