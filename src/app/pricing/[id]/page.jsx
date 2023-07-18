@@ -9,6 +9,7 @@ import { useParams } from 'next/navigation'
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from "next/image";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,7 +25,7 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 export default function Page() {
 
     const params = useParams()
-    console.log(params.id);
+    // console.log(params.id);
 
     const IMGPATH = "https://image.tmdb.org/t/p/w1280";
     const [movieArray, movieUpdate] = useState([]);
@@ -119,7 +120,9 @@ export default function Page() {
                     // </div>
 
                     <SwiperSlide>
-                        <img key={value.id} src={IMGPATH + value.poster_path} />
+                        <div key={value.id}>
+                            <img key={value.id} src={IMGPATH + value.poster_path} width="100%" height="100%" />
+                        </div>
                     </SwiperSlide>
                     // </Suspense>
                 ))}
@@ -155,16 +158,16 @@ export default function Page() {
 
 
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
+                <ul className="pagination justify-content-center">
+                    <li className="page-item">
                         <Link className="underline-remove" href={'/pricing/' + (page - 1)}>
                             <button disabled={page != 1 ? false : true} onClick={page != '1' ? PageDecrement : ''} className="page-link">Previous</button>
                         </Link>
                     </li>
-                    <li hidden={page != 1 ? false : true} class="page-item"><Link class="page-link" href={'/pricing/' + (page - 1)}>{page - 1}</Link></li>
-                    <li class="page-item"><Link class="page-link bg-dark" href={'/pricing/' + (page)}>{page}</Link></li>
-                    <li class="page-item"><Link class="page-link" href={'/pricing/' + (page + 1)}>{page + 1}</Link></li>
-                    <li class="page-item">
+                    <li hidden={page != 1 ? false : true} className="page-item"><Link className="page-link" href={'/pricing/' + (page - 1)}>{page - 1}</Link></li>
+                    <li className="page-item"><Link className="page-link bg-dark" href={'/pricing/' + (page)}>{page}</Link></li>
+                    <li className="page-item"><Link className="page-link" href={'/pricing/' + (page + 1)}>{page + 1}</Link></li>
+                    <li className="page-item">
                         <Link className="underline-remove" href={'/pricing/' + (page + 1)}>
                             <button onClick={PageIncrement} className="page-link">Next</button>
                         </Link>
