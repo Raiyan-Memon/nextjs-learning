@@ -16,25 +16,25 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/" ? ' text-black' : '')} aria-current="page" href="/">Home</Link>
+                            <Link data-bs-toggle="collapse" className={'nav-link' + (pathname == "/" ? ' text-black' : '')} aria-current="page" href="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/about" ? ' text-black' : '')} href="/about">Weather</Link>
+                            <Link data-bs-toggle="collapse" className={'nav-link' + (pathname == "/about" ? ' text-black' : '')} href="/about">Weather</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/contact" ? ' text-black' : '')} href="/contact">Todo's App</Link>
+                            <Link data-bs-toggle="collapse" className={'nav-link' + (pathname == "/contact" ? ' text-black' : '')} href="/contact">Todo's App</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname.indexOf('pricing') >= 0 ? ' text-black' : '')} href="/pricing/1">Movie</Link>
+                            <Link data-bs-toggle="collapse" className={'nav-link' + (pathname.indexOf('pricing') >= 0 ? ' text-black' : '')} href="/pricing/1">Movie</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/service" ? ' text-black' : '')} href="/service">Service</Link>
+                            <Link data-bs-toggle="collapse" className={'nav-link' + (pathname == "/service" ? ' text-black' : '')} href="/service">Service</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/login" ? ' text-black' : '')} href="/login">LogIN</Link>
+                            <Link data-bs-toggle="collapse" className={'nav-link' + (pathname == "/login" ? ' text-black' : '')} href="/login">LogIN</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={'nav-link' + (pathname == "/signup" ? ' text-black' : '')} href="/signup">SignUp</Link>
+                            <Link data-bs-toggle="collapse" className={'nav-link' + (pathname == "/signup" ? ' text-black' : '')} href="/signup">SignUp</Link>
                         </li>
 
                     </ul>
