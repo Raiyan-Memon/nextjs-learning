@@ -7,7 +7,9 @@ export default function Navbar() {
     const pathname = usePathname()
 
     function CloseNavbar(){
-        const navbar = document.getElementById('collapse-navbar')?.click();
+        if(window.innerWidth <= 580){
+            const navbar = document.getElementById('collapse-navbar')?.click();
+        }
     }
 
     return (

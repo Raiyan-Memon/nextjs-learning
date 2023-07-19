@@ -20,9 +20,12 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { auto } from "@popperjs/core";
 
 
 export default function Page() {
+ 
+
 
     const params = useParams()
     // console.log(params.id);
@@ -70,11 +73,15 @@ export default function Page() {
         <div className="container-fluid">
 
             <Swiper
-                loop={true}
+                // loop={true}
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={'auto'}
+                autoplay= {{ 
+                    delay: 2000
+                 }}
+                freeMode = {true}
                 coverflowEffect={{
                     rotate: 50,
                     stretch: 0,
@@ -82,7 +89,7 @@ export default function Page() {
                     modifier: 1,
                     slideShadows: true,
                 }}
-                pagination={true}
+                // pagination={true}
                 modules={[EffectCoverflow, Pagination]}
                 className="mySwiper">
                 {/* <SwiperSlide>
